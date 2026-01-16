@@ -1,0 +1,53 @@
+.text-field_label {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2.5px;
+  color: #adadad;
+}
+.text-field_input {
+  background: #f0f0f0;
+  border-radius: 16px;
+  max-width: 100%;
+  display: flex;
+  padding: 6px 16px 6px 16px;
+  margin-top: 10px;
+  &:focus-within {
+    background: #c2c2c2;
+  }
+  input {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #2d3436;
+  }
+  input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+  input:disabled {
+    background-color: #f0f0f0;
+    color: #2d343698;
+    cursor: no-drop
+  }
+}
+.error {
+  border: 1px solid red;
+}
+
+.text-field-error_message {
+  color: #cc1f1f;
+  font-family: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 4px;
+}
+
+.text-field-icon {
+  width: 20px;
+}

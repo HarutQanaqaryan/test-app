@@ -1,0 +1,82 @@
+<div class="claims-page">
+  <div class="claims-page_header">
+    <h2>Задачи</h2>
+    <ui-button
+      text="Создать задачу"
+      iconSrc="assets/icon-plus.svg"
+      width="150px"
+      (click)="isCreatingClaim = !isCreatingClaim"
+      [isDisabled]="!currentUser?.role?.includes(Rolles.CREATOR)"
+    ></ui-button>
+  </div>
+  <div class="table-wrapper">
+    <div class="table-scroll">
+      <table class="table">
+        <thead class="table-head">
+          <tr>
+            <th *ngFor="let element of columns">
+              <div class="header-item">
+                <input
+                  [id]="element.title"
+                  (input)="searchClaim($event, element)"
+                  *ngIf="element !== columns.at(-1)"
+                  class="search-input"
+                  placeholder="Поиск по {{ element.title }}"
+                />
+                <div class="actions" *ngIf="element === columns.at(-1)">
+                  {{ element.title }}
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr
+            *ngFor="let row of claims; index as i"
+            class="table-row"
+            [ngStyle]="{
+              'background-color': i % 2 !== 0 && '#f2f2f2'
+            }"
+          >
+            <td>{{ row.title }}</td>
+            <td>{{ row.created }}</td>
+            <td><ui-type type="{{ row.type }}" /></td>
+            <td id="status"><ui-status [status]="row.status" /></td>
+            <td>
+              <div class="actions-icons">
+                <img
+                  src="assets/pencil.svg"
+                  (click)="setCurrentClaim(row, ActionTypes.EDIT)"
+                  *ngIf="isAbleToEditStatus(row.status, row.creator)"
+                />
+                <img
+                  src="assets/view.svg"
+                  (click)="setCurrentClaim(row, ActionTypes.VIEW)"
+                  *ngIf="currentUser?.role?.includes(Rolles.VIEWER)"
+                />
+                <img
+                  src="assets/remove.svg"
+                  (click)="setCurrentClaim(row, ActionTypes.REMOVE)"
+                  *ngIf="
+                    currentUser?.login === row.creator &&
+                    row.status === StatusType.New
+                  "
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<viewing-modal *ngIf="isViewingClaim" (close)="closeModal(ActionTypes.VIEW)" />
+<editing-modal *ngIf="isEditingClaim" (close)="closeModal(ActionTypes.EDIT)" />
+<creating-modal
+  *ngIf="isCreatingClaim"
+  (close)="closeModal(ActionTypes.CREATING)"
+/>
+<deleting-claim
+  *ngIf="isDeletingClaim"
+  (close)="closeModal(ActionTypes.REMOVE)"
+/>

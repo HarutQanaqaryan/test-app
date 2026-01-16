@@ -1,0 +1,25 @@
+<ui-modal (close)="onClose()">
+  <div class="current-claim">
+    <div>
+      <label class="label">Описание</label>
+      <h1 class="data-title">{{ currentClaim?.title }}</h1>
+    </div>
+    <div>
+      <label class="label">Создано</label>
+      <h2 class="data-date">{{ currentClaim?.created }}</h2>
+    </div>
+    <div>
+      <label *ngIf="currentClaim?.creator" class="label">Инициатор</label>
+      <h2 class="data-date">{{ getUser(currentClaim?.creator) }}</h2>
+    </div>
+    <div>
+      <label class="label">Критичность</label>
+      <ui-type [type]="currentClaim?.type" />
+    </div>
+    <div>
+      <label class="label">Описание</label>
+      <p class="desc">{{ currentClaim?.description }}</p>
+    </div>
+    <ui-status [status]="currentClaim?.status" />
+  </div>
+</ui-modal>

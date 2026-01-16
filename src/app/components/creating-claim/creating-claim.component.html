@@ -1,0 +1,31 @@
+<ui-modal (close)="onClose()">
+  <form [formGroup]="form" (ngSubmit)="onSave()" class="form">
+    <ui-input
+      placeholder=""
+      label="ID задачи"
+      formControlName="title"
+      class="edit-input"
+    ></ui-input>
+    <ui-textarea
+      placeholder=""
+      label="Описание"
+      formControlName="description"
+      class="edit-input"
+    ></ui-textarea>
+    <ui-select
+      [defaultValue]="form.value.type"
+      label="Критичность"
+      [options]="typeOptions"
+      [(currentSelection)]="_type"
+      (currentSelectionChange)="setType($event)"
+    ></ui-select>
+    <span class="error" *ngIf="errorMessage">{{
+      errorMessage | titlecase
+    }}</span>
+    <ui-button
+      class="save-btn"
+      text="Сохранить"
+      [isDisabled]="form.invalid"
+    ></ui-button>
+  </form>
+</ui-modal>

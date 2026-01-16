@@ -1,0 +1,17 @@
+<div [ngClass]="class">
+  <label class="text-field_label">{{ label }}</label>
+  <div class="text-field_textarea" [ngClass]="{ 'error': isError }">
+    <textarea
+      [placeholder]="placeholder"
+      [defaultValue]="defaultValue"
+      [(ngModel)]="input"
+      (ngModelChange)="onChange($event)"
+      autoComplete="on"
+      [disabled]="!!disabled"
+    ></textarea>
+    <img *ngIf="icon" [src]="icon" alt="icon" class="text-field-icon" />
+  </div>
+  <span *ngIf="isError" class="text-field-error_message">{{
+    errorMessage
+  }}</span>
+</div>

@@ -1,0 +1,15 @@
+<div class="navbar">
+  <img
+    alt="Company Logo"
+    src="assets/company-logo-lil.svg"
+    class="navbar-company-logo"
+  />
+  <span
+    *ngFor="let item of MENU_ITEMS"
+    class="navbar-item navbar-item_current"
+    [ngClass]="{ 'navbar-item_current': item.current }"
+  >
+    <img alt="name" [src]="item.icon" class="navbar-item_logo" />
+    <a [href]="item.href" class="navbar-item-title"></a>
+  </span>
+</div>

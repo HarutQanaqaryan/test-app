@@ -1,0 +1,9 @@
+<button
+  (click)="onClick()"
+  class="btn"
+  [disabled]="isDisabled"
+  [style.width]="width"
+>
+  <img *ngIf="iconSrc" [src]="iconSrc" alt="Icon" />
+  {{ text }}
+</button>

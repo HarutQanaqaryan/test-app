@@ -1,0 +1,14 @@
+<div class="header">
+  <div class="current-user">
+    <span class="header-user-name"
+      >{{ currentUser?.firstName![0] }}. {{ currentUser?.lastName }}</span
+    >
+    <img src="assets/user.svg" alt="User Icon" class="header-user-icon" />
+  </div>
+  <img
+    src="assets/icon-log-out.svg"
+    alt="Log out icon"
+    class="header-log-out"
+    (click)="logout()"
+  />
+</div>

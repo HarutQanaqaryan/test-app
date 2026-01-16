@@ -1,0 +1,22 @@
+<div class="select">
+  <label class="select_label">{{ label }}</label>
+  <div
+    class="select_value_wrapper"
+    (click)="isOptions = !isOptions"
+    [ngClass]="disabled ? 'disabled' : ''"
+  >
+    <div class="select_value" [ngClass]="disabled ? 'disabled' : ''">
+      {{ currentSelection || defaultValue }}
+    </div>
+    <img src="assets/arrow-bottom.svg" alt="Select" class="select_icon" />
+    <div *ngIf="isOptions" class="select_options">
+      <div
+        *ngFor="let option of options"
+        class="select_option"
+        (click)="setCurrentSelection(option)"
+      >
+        {{ option }}
+      </div>
+    </div>
+  </div>
+</div>

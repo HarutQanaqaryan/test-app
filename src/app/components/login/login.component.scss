@@ -1,0 +1,50 @@
+.login-user-page {
+  display: flex;
+  width: 50vw;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 100px;
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.login-user-authorization_logo {
+  margin-bottom: 10px;
+}
+
+.login-user_request-register {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2d3436;
+  text-align: center;
+}
+.login-user_request-register_link {
+  text-decoration: none;
+  color: blue;
+}
+
+.form {
+  width: 90%;
+  height: fit-content;
+}
+
+.error {
+  color: #cc1f1f;
+  font-family: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: auto;
+}
+
+.login-input {
+  margin: 30px;
+}
+
+.login-btn {
+  margin: 10px;
+}

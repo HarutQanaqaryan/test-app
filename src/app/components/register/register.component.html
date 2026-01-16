@@ -1,0 +1,66 @@
+<div class="register-page">
+  <div class="register-block">
+    <img
+      alt="Company Icon"
+      src="assets/main-logo.svg"
+      class="login-user-authorization_logo"
+    />
+    <form [formGroup]="form" (ngSubmit)="register()" class="form">
+      <ui-input
+        placeholder="Укажите своё имя"
+        label="ИМЯ"
+        formControlName="firstname"
+        class="register-input"
+        [isError]="registerForm.firstname.errors?.pattern"
+        errorMessage="Разрешены только символы кириллицы от 2 до 30"
+      ></ui-input>
+      <ui-input
+        placeholder="Укажите свою фамилию"
+        label="ФАМИЛИЯ"
+        formControlName="lastname"
+        class="register-input"
+        [isError]="registerForm.lastname.errors?.pattern"
+        errorMessage="Разрешены только символы кириллицы от 2 до 30"
+      ></ui-input>
+      <ui-input
+        placeholder="Укажите свой логин"
+        label="Логин"
+        formControlName="login"
+        class="register-input"
+      ></ui-input
+      ><ui-input
+        placeholder="Укажите своё пароль"
+        label="Пароль"
+        type="password"
+        formControlName="password"
+        class="register-input"
+      ></ui-input>
+      <ui-input
+        placeholder="Повторите своё пароль"
+        label="Пароль повторно"
+        type="password"
+        formControlName="passwordAgain"
+        class="register-input"
+      ></ui-input>
+      <div class="error" *ngIf="isUserAlreadyExist">
+        Такой логин уже зарегистрирован
+      </div>
+      <span *ngIf="isPasswordsNotEqual" class="error">Неверный пароль</span>
+      <ui-button
+        class="register-btn"
+        text="Логин"
+        [isDisabled]="!form.valid"
+      ></ui-button>
+    </form>
+    <span className="sign_in">
+      Уже зарегистророваны?
+      <a class="login-user_request-register_link" [routerLink]="['/login']">
+        Войти
+      </a>
+    </span>
+  </div>
+  <ui-loading *ngIf="loading" />
+  <div *ngIf="isRegistered" class="registered-modal">
+    <span class="registered-message">Вы зарегистрированы</span>
+  </div>
+</div>

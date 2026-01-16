@@ -1,0 +1,43 @@
+<div class="login-user-page">
+  <img
+    alt="Company Icon"
+    src="assets/main-logo.svg"
+    class="login-user-authorization_logo"
+  />
+  <form [formGroup]="form" (ngSubmit)="signIn()" class="form">
+    <ui-input
+      label="Логин"
+      placeholder="Введите свой логин"
+      icon="../assets/user.svg"
+      formControlName="login"
+      type="email"
+      [isError]="submitted && login.errors?.required"
+      class="login-input"
+      errorMessage="Обязательное поле"
+    />
+    <ui-input
+      placeholder="Введите пароль"
+      label="Пароль"
+      icon="../assets/icon-lock.svg"
+      formControlName="password"
+      type="password"
+      [isError]="submitted && password.errors?.required"
+      class="login-input"
+      errorMessage="Обязательное поле"
+    />
+    <span class="error" *ngIf="errorMessage">{{ errorMessage }}</span>
+    <ui-button
+      type="submit"
+      text="Войти"
+      class="login-btn"
+      [isDisabled]="!form.valid"
+    />
+  </form>
+  <span className="login-user_request-register">
+    Новый пользоватедь?
+    <a class="login-user_request-register_link" [routerLink]="['/register']">
+      Регистрация
+    </a>
+  </span>
+</div>
+<ui-loading *ngIf="loading"></ui-loading>

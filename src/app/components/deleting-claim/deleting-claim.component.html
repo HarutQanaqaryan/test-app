@@ -1,0 +1,7 @@
+<ui-modal (close)="onClose()">
+  <h4>Вы действительно хотите удалить задачу?</h4>
+  <div class="delete-actions">
+    <ui-button text="Удалить" (click)="onDelete()"></ui-button>
+    <ui-button text="Отмена" (click)="onClose()"></ui-button>
+  </div>
+</ui-modal>
