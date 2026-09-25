@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -33,39 +33,32 @@ import { LayoutComponent } from './components/layout';
 import { DatePipe } from '@angular/common';
 import { ModalComponent } from './shared/ui-kit/ui-modal/ui-modal.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    ButtonComponent,
-    InputComponent,
-    LoginComponent,
-    RegisterComponent,
-    LoadingComponent,
-    HeaderComponent,
-    ClaimsComponent,
-    FooterComponent,
-    NavbarComponent,
-    ViewingClaimComponent,
-    EditingClaimComponent,
-    StatusComponent,
-    TypeComponent,
-    SelectComponent,
-    CreatingClaimComponent,
-    TextareaComponent,
-    DeletingClaimComponent,
-    LayoutComponent,
-    NotFoundComponent,
-    ModalComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    StoreModule.forRoot(reducers, {}),
-  ],
-  providers: [DatePipe],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ButtonComponent,
+        InputComponent,
+        LoginComponent,
+        RegisterComponent,
+        LoadingComponent,
+        HeaderComponent,
+        ClaimsComponent,
+        FooterComponent,
+        NavbarComponent,
+        ViewingClaimComponent,
+        EditingClaimComponent,
+        StatusComponent,
+        TypeComponent,
+        SelectComponent,
+        CreatingClaimComponent,
+        TextareaComponent,
+        DeletingClaimComponent,
+        LayoutComponent,
+        NotFoundComponent,
+        ModalComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        StoreModule.forRoot(reducers, {})], providers: [DatePipe, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
