@@ -11,9 +11,10 @@ import {
   setCurrentClaim,
 } from 'app/states';
 @Component({
-  selector: 'claims',
-  templateUrl: './claims.component.html',
-  styleUrls: ['./claims.component.scss'],
+    selector: 'claims',
+    templateUrl: './claims.component.html',
+    styleUrls: ['./claims.component.scss'],
+    standalone: false
 })
 export class ClaimsComponent {
   columns: IColumn[] = tableColumns;

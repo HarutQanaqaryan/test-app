@@ -5,9 +5,10 @@ import { getUserName } from 'app/shared';
 import { AppState, selectCurrentClaim } from 'app/states';
 
 @Component({
-  selector: 'viewing-modal',
-  templateUrl: './viewing-claim.component.html',
-  styleUrls: ['./viewing-claim.component.scss'],
+    selector: 'viewing-modal',
+    templateUrl: './viewing-claim.component.html',
+    styleUrls: ['./viewing-claim.component.scss'],
+    standalone: false
 })
 export class ViewingClaimComponent {
   @Output() close = new EventEmitter();

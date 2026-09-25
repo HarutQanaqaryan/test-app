@@ -9,17 +9,17 @@ import {
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'ui-select',
-  templateUrl: './ui-select.component.html',
-  styleUrls: ['./ui-select.component.scss'],
-
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SelectComponent),
-      multi: true,
-    },
-  ],
+    selector: 'ui-select',
+    templateUrl: './ui-select.component.html',
+    styleUrls: ['./ui-select.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => SelectComponent),
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class SelectComponent implements OnInit {
   @Input() label: string;

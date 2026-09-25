@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth-mock.service';
 
 @Component({
-  selector: 'register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+    selector: 'register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.scss'],
+    standalone: false
 })
 export class RegisterComponent {
   isPasswordsNotEqual: boolean;

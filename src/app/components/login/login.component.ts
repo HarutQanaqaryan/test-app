@@ -12,9 +12,10 @@ import { AuthService } from 'app/services/auth-mock.service';
 import { AppState, selectCurrentUser } from 'app/states';
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    selector: 'login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: false
 })
 export class LoginComponent implements OnInit {
   errorMessage?: string;

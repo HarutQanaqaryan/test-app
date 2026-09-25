@@ -11,9 +11,10 @@ import {
 } from 'app/states';
 
 @Component({
-  selector: 'editing-modal',
-  templateUrl: './editing-claim.component.html',
-  styleUrls: ['./editing-claim.component.scss'],
+    selector: 'editing-modal',
+    templateUrl: './editing-claim.component.html',
+    styleUrls: ['./editing-claim.component.scss'],
+    standalone: false
 })
 export class EditingClaimComponent implements OnInit {
   @Output() close = new EventEmitter();

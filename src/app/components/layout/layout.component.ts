@@ -3,9 +3,10 @@ import { Store, select } from '@ngrx/store';
 import { AppState, selectCurrentUser } from 'app/states';
 
 @Component({
-  selector: 'layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss'],
+    selector: 'layout',
+    templateUrl: './layout.component.html',
+    styleUrls: ['./layout.component.scss'],
+    standalone: false
 })
 export class LayoutComponent {
   isSignIn: boolean;

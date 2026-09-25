@@ -6,9 +6,10 @@ import { AuthService } from 'app/services/auth-mock.service';
 import { AppState, selectCurrentUser } from 'app/states';
 
 @Component({
-  selector: 'header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+    selector: 'header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: false
 })
 export class HeaderComponent {
   currentUser?: IUser = void 0;

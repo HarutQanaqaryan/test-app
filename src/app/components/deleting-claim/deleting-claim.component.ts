@@ -10,9 +10,10 @@ import {
 } from 'app/states';
 
 @Component({
-  selector: 'deleting-claim',
-  templateUrl: './deleting-claim.component.html',
-  styleUrls: ['./deleting-claim.component.scss'],
+    selector: 'deleting-claim',
+    templateUrl: './deleting-claim.component.html',
+    styleUrls: ['./deleting-claim.component.scss'],
+    standalone: false
 })
 export class DeletingClaimComponent {
   @Output() close = new EventEmitter();

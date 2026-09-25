@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { ClaimType } from 'app/models';
 
 @Component({
-  selector: 'ui-type',
-  templateUrl: './ui-type.component.html',
-  styleUrls: ['./ui-type.component.scss'],
+    selector: 'ui-type',
+    templateUrl: './ui-type.component.html',
+    styleUrls: ['./ui-type.component.scss'],
+    standalone: false
 })
 export class TypeComponent {
   @Input() type?: string;

@@ -12,9 +12,10 @@ import { ClaimsService } from 'app/services/claims.service';
 import { AppState, selectClaimsList, selectCurrentUser } from 'app/states';
 
 @Component({
-  selector: 'creating-modal',
-  templateUrl: './creating-claim.component.html',
-  styleUrls: ['./creating-claim.component.scss'],
+    selector: 'creating-modal',
+    templateUrl: './creating-claim.component.html',
+    styleUrls: ['./creating-claim.component.scss'],
+    standalone: false
 })
 export class CreatingClaimComponent {
   @Output() close = new EventEmitter();

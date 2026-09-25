@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'ui-button',
-  templateUrl: './ui-button.component.html',
-  styleUrls: ['./ui-button.component.scss'],
+    selector: 'ui-button',
+    templateUrl: './ui-button.component.html',
+    styleUrls: ['./ui-button.component.scss'],
+    standalone: false
 })
 export class ButtonComponent {
   @Input() text: string;

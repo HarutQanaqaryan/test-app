@@ -2,17 +2,17 @@ import { Component, Input, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'ui-textarea',
-  templateUrl: './ui-textarea.component.html',
-  styleUrls: ['./ui-textarea.component.scss'],
-
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TextareaComponent),
-      multi: true,
-    },
-  ],
+    selector: 'ui-textarea',
+    templateUrl: './ui-textarea.component.html',
+    styleUrls: ['./ui-textarea.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => TextareaComponent),
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class TextareaComponent {
   @Input() label: string;

@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { StatusType } from 'app/models';
 
 @Component({
-  selector: 'ui-status',
-  templateUrl: './ui-status.component.html',
-  styleUrls: ['./ui-status.component.scss'],
+    selector: 'ui-status',
+    templateUrl: './ui-status.component.html',
+    styleUrls: ['./ui-status.component.scss'],
+    standalone: false
 })
 export class StatusComponent {
   @Input() status?: string;

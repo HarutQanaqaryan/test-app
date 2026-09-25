@@ -2,17 +2,17 @@ import { Component, Input, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'ui-input',
-  templateUrl: './ui-input.component.html',
-  styleUrls: ['./ui-input.component.scss'],
-
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true,
-    },
-  ],
+    selector: 'ui-input',
+    templateUrl: './ui-input.component.html',
+    styleUrls: ['./ui-input.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => InputComponent),
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class InputComponent {
   @Input() label: string;
