@@ -1,0 +1,8 @@
+{
+  "name": "test-app",
+  "compatibility_date": "2026-09-28",
+  "assets": {
+    "directory": "./dist/angular_app",
+    "not_found_handling": "single-page-application"
+  }
+}
